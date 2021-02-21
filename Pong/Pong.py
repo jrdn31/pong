@@ -4,7 +4,7 @@ import pygame
 import random
 from pygame.locals import QUIT, KEYDOWN, K_ESCAPE, K_SPACE, K_LEFT, K_RIGHT, K_r
 
-def display_massage(sf, msg, h) :
+def display_message(sf, msg, h) :
     sysfont = pygame.font.SysFont(None, 36)
     message = sysfont.render(msg, True, (100,255,200))
     message_rect = message.get_rect()
@@ -38,16 +38,16 @@ def main():
 
         if state == 0:
             surface.fill(0x006633)
-            display_massage(surface, "Press Space Key to Start", 160)
+            display_message(surface, "Press Space Key to Start", 160)
         elif state == 1:
             surface.fill(0x006633)
             # move a ball
             ball_x += dx; ball_y += dy
             # draw a ball
-            pygame.draw.circle(surface,(0,255,0),(ball_x,ball_y),ball_r)
+            pygame.draw.circle(surface,(255,0,255),(ball_x,ball_y),ball_r)
 
             # draw a racket
-            pygame.draw.rect(surface,(0,0,255),(rckt_x,rckt_y,rckt_w,5),0)
+            pygame.draw.rect(surface,(0,0,255),(rckt_x,rckt_y,rckt_w,10),0)
             point += 1
 
 
